@@ -1,0 +1,41 @@
+<% include ../partials/header%>
+
+
+<div class="container-fluid">
+<hearder class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-4">Welcome all Trail Campers!</h1>
+    <p class="lead">View our hand-picked trails from all over the U.S.</p>
+    <p>
+       <a class="btn btn-secondary" href="/trails/new">Add New Trail</a>
+    </p>
+        <form action="/trails" method="GET" class="form-inline">
+          <div class="form-group">
+            <input type="text" name="search" placeholder="Trails Search..." class="form-control">
+            <input type="submit" value="Search" class="btn btn-default">
+          </div>
+        </form>
+    <p>
+    </p>
+    </div>
+</hearder>
+<div class="row" style="display:flex; flex-wrap: wrap;">
+    <figure class="figure">
+        <%trails.forEach(function(trails){%>
+               <div class="col-md-3 col-md-6">
+                <div class="figure-img img-fluid rounded">
+                   <img src="<%= trails.image%>">
+                   <figcaption class="figure-caption">
+                       <H4><%= trails.name %></H4>
+                    </figcaption>
+                    <p>
+                      <a class="btn btn-info" href="/trails/<%= trails._id %>">More Info</a>
+                    </p>
+                 </div>
+               </div>
+               </figure>
+            <% });%>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

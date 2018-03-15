@@ -1,0 +1,32 @@
+<% include ./partials/header%>
+<div class="row">
+    <h1 id="h1_login">Sign up!</h1>
+      <div class="login">
+        <form action="/register" method="post">
+          <div class="form-group">
+            <input type="text" name="username" placeholder="username">
+          </div>
+          <div class="form-group">
+            <input type="text" name="password" placeholder="password">
+          </div>
+          <div class="form-group">
+            <input type="text" name="firstName" placeholder="first Name">
+          </div>
+          <div class="form-group">
+            <input type="text" name="lastName" placeholder="last Name">
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="email">
+          </div>
+          <div class="form-group">
+            <input type="text" name="avatar" placeholder="avatar url">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block">Sign Up</button>
+          </div>
+        </form>
+        <a href="/trails">Go Back</a>
+      </div>
+</div>
+
+<% include ./partials/footer%>
